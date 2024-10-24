@@ -1,4 +1,4 @@
-package com.developer.dealslist
+package com.developer.dealslist.view
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -19,6 +19,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.developer.dealslist.model.ListingItem
 import coil.compose.rememberAsyncImagePainter
+import com.developer.dealslist.R
 
 /**
  * This controls what each item in the list will look like on the screen
