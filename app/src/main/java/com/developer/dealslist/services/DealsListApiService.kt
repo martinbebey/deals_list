@@ -1,6 +1,6 @@
 package com.developer.dealslist.services
 
-import com.developer.fetchapp.model.Item
+import com.developer.dealslist.model.ListingItem
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
@@ -14,12 +14,12 @@ private val retrofit = Retrofit
     .addConverterFactory(GsonConverterFactory.create())
     .build()
 
-val fetchService = retrofit.create(ApiService::class.java)
+val fetchService = retrofit.create(DealsListApiService::class.java)
 
 /**
  * Service for fetching the remote data list
  **/
 interface DealsListApiService{
     @GET(END_POINT)
-    suspend fun getListItems(): MutableList<Item>
+    suspend fun getListItems(): MutableList<ListingItem>
 }

@@ -50,6 +50,20 @@ android {
 }
 
 dependencies {
+    val nav_version = "2.7.5"
+    val compose_version = "1.6.0-alpha08"
+    val retrofit_version = "2.9.0"
+    val lifecycle_version = "2.6.2"
+    val material3_version = "material3-android:1.2.0-rc01"
+
+    implementation("androidx.navigation:navigation-compose:$nav_version")
+    implementation("androidx.compose.ui:ui:$compose_version")
+    implementation("androidx.compose.material:material:$compose_version")
+
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version") //compose viewmodel
+    implementation("com.squareup.retrofit2:retrofit:$retrofit_version") //retrofit network calls
+    implementation("com.squareup.retrofit2:converter-gson:$retrofit_version") //json -> obj mapping
+    implementation("androidx.compose.material3:$material3_version")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
