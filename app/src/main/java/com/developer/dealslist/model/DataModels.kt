@@ -7,8 +7,8 @@ data class ListingItem(
     var fulfillment: String,
     var id: Int,
     var imageUrl: String,
-    var regularPrice: Price,
-    var salePrice: Price,
+    var regular_price: Price,
+    var sale_price: Price,
     var title: String
 )
 

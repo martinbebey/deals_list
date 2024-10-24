@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">DealsList</string>
+
+    <!-- listing page -->
+    <string name="reg_price_label">reg. </string>
+    <string name="online_label">Online</string>
+    <string name="in_stock_label">In stock </string>
+    <string name="in_aisle_label">in aisle </string>
+    <string name="listing_page_title">List</string>
 </resources>
