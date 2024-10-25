@@ -32,7 +32,7 @@ fun ListingPageView(
 
     Box{
         when (listingViewState) {
-            is ViewState.Loading -> {
+            ViewState.Loading -> {
                     CircularProgressIndicator(modifier.align(Alignment.Center))
             }
 
@@ -52,7 +52,7 @@ fun ListingPageView(
                         LazyColumn(modifier = Modifier
                             .padding(it)
                         ) {
-                            items(listingViewState.itemList) { productFromList ->
+                            items(listingViewState.itemList.products) { productFromList ->
                                 ListingPageItem(
                                     item = productFromList,
                                     navigateToDetailScreen = navigateToDetailScreen

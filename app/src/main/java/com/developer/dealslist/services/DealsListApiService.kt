@@ -1,5 +1,6 @@
 package com.developer.dealslist.services
 
+import com.developer.dealslist.model.DealsList
 import com.developer.dealslist.model.ListingItem
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -21,5 +22,5 @@ val fetchService = retrofit.create(DealsListApiService::class.java)
  **/
 interface DealsListApiService{
     @GET(END_POINT)
-    suspend fun getDealsListItems(): MutableList<ListingItem>
+    suspend fun getDealsListItems(): DealsList
 }

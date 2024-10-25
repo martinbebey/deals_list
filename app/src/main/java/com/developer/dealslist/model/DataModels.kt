@@ -1,22 +1,33 @@
 package com.developer.dealslist.model
 
+import com.google.gson.annotations.SerializedName
+
+
+
+
 data class ListingItem(
     var aisle: String = "",
     var availability: String = "",
     var description: String = "",
     var fulfillment: String = "",
     var id: Int = -1,
-    var imageUrl: String = "",
+    var image_url: String = "",
     var regular_price: Price = Price(0, "", ""),
     var sale_price: Price = Price(0, "", ""),
     var title: String = ""
 )
 
 data class Price(
-    var amountInCents: Int,
-    var currencySymbol: String,
-    var displayingString: String
+    var amount_in_cents: Int,
+    var currency_symbol: String,
+    var display_string: String
 )
+
+
+data class DealsList (
+    val products: List<ListingItem>
+)
+
 sealed interface ViewState {
     data object Loading: ViewState
 
@@ -26,6 +37,6 @@ sealed interface ViewState {
     ): ViewState
 
     data class Success(
-        val itemList: List<ListingItem>
+        val itemList: DealsList
     ): ViewState
 }

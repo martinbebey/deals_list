@@ -38,7 +38,7 @@ fun ListingPageItem(
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Image(
-                painter = rememberAsyncImagePainter(item.imageUrl),
+                painter = rememberAsyncImagePainter(item.image_url),
                 contentDescription = "product image",
                 modifier = Modifier
                     .fillMaxSize()
@@ -48,7 +48,7 @@ fun ListingPageItem(
             Column {
                 Row {
                     Text(
-                        text = item.sale_price.displayingString,
+                        text = item.sale_price.display_string,
                         color = Color.Blue,
                         style = TextStyle(fontWeight = FontWeight.Bold),
                         modifier = Modifier.padding(top = 4.dp)
@@ -62,7 +62,7 @@ fun ListingPageItem(
                     )
 
                     Text(
-                        text = item.regular_price.displayingString,
+                        text = item.regular_price.display_string,
                         color = Color.Blue,
                         style = TextStyle(fontWeight = FontWeight.Bold),
                         modifier = Modifier.padding(top = 4.dp)
