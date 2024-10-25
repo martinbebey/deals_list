@@ -7,4 +7,6 @@
     <string name="in_stock_label">In stock </string>
     <string name="in_aisle_label">in aisle </string>
     <string name="listing_page_title">List</string>
+
+    <!-- listing page -->
 </resources>

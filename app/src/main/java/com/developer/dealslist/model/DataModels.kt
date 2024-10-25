@@ -1,10 +1,10 @@
 package com.developer.dealslist.model
 
-import com.google.gson.annotations.SerializedName
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
 
-
-
+@Parcelize
 data class ListingItem(
     var aisle: String = "",
     var availability: String = "",
@@ -15,13 +15,14 @@ data class ListingItem(
     var regular_price: Price = Price(0, "", ""),
     var sale_price: Price = Price(0, "", ""),
     var title: String = ""
-)
+) : Parcelable
 
+@Parcelize
 data class Price(
     var amount_in_cents: Int,
     var currency_symbol: String,
     var display_string: String
-)
+) : Parcelable
 
 
 data class DealsList (
