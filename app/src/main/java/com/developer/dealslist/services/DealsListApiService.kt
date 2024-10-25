@@ -21,5 +21,5 @@ val fetchService = retrofit.create(DealsListApiService::class.java)
  **/
 interface DealsListApiService{
     @GET(END_POINT)
-    suspend fun getListingItems(): MutableList<ListingItem>
+    suspend fun getDealsListItems(): MutableList<ListingItem>
 }
