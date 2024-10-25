@@ -1,15 +1,15 @@
 package com.developer.dealslist.model
 
 data class ListingItem(
-    var aisle: String,
-    var availability: String,
-    var description: String,
-    var fulfillment: String,
-    var id: Int,
-    var imageUrl: String,
-    var regular_price: Price,
-    var sale_price: Price,
-    var title: String
+    var aisle: String = "",
+    var availability: String = "",
+    var description: String = "",
+    var fulfillment: String = "",
+    var id: Int = -1,
+    var imageUrl: String = "",
+    var regular_price: Price = Price(0, "", ""),
+    var sale_price: Price = Price(0, "", ""),
+    var title: String = ""
 )
 
 data class Price(

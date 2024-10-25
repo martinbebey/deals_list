@@ -1,6 +1,7 @@
 package com.developer.dealslist.view
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -26,9 +27,12 @@ import com.developer.dealslist.R
  **/
 @Composable
 fun ListingPageItem(
-    item: ListingItem
+    item: ListingItem,
+    navigateToDetailScreen: (ListingItem) -> Unit
 ) {
-    Column {
+    Column(
+        modifier = Modifier.clickable { navigateToDetailScreen(item) }
+    ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
