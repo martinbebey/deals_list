@@ -20,6 +20,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 import com.developer.dealslist.R
 import com.developer.dealslist.model.ListingItem
@@ -27,14 +28,17 @@ import com.developer.dealslist.model.ViewState
 
 @Composable
 fun ItemDetailPageView(
-    item: ListingItem
+    item: ListingItem,
+    navController: NavController
 ){
 
     val scaffoldState = rememberScaffoldState()
 
     Scaffold(
         topBar = {
-            TopBarView(title = stringResource(id = R.string.detail_page_title))
+            TopBarView(title = stringResource(id = R.string.detail_page_title)){
+                navController.navigateUp()
+            }
         },
         scaffoldState = scaffoldState,
     ) {
