@@ -48,16 +48,14 @@ fun ListingPageView(
                     },
                     scaffoldState = scaffoldState,
                 ) {
-                    Column {
-                        LazyColumn(modifier = Modifier
-                            .padding(it)
-                        ) {
-                            items(listingViewState.itemList.products) { productFromList ->
-                                ListingPageItem(
-                                    item = productFromList,
-                                    navigateToDetailScreen = navigateToDetailScreen
-                                )
-                            }
+                    LazyColumn(modifier = Modifier
+                        .padding(it)
+                    ) {
+                        items(listingViewState.itemList.products) { productFromList ->
+                            ListingPageItem(
+                                item = productFromList,
+                                navigateToDetailScreen = navigateToDetailScreen
+                            )
                         }
                     }
                 }

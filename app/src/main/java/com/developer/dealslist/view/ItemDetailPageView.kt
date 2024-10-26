@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.CircularProgressIndicator
@@ -40,6 +41,7 @@ fun ItemDetailPageView(
 ){
 
     val scaffoldState = rememberScaffoldState()
+    productDetailViewModel.fetchSingleProduct(item.id.toString())
     val detailViewState = productDetailViewModel.listingViewState.value
 
     Scaffold(
@@ -57,7 +59,7 @@ fun ItemDetailPageView(
                 painter = rememberAsyncImagePainter(item.image_url),
                 contentDescription = "product image",
                 modifier = Modifier
-                    .fillMaxSize()
+                    .size(100.dp)
                     .aspectRatio(1f)
             )
 
