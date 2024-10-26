@@ -5,9 +5,10 @@ import com.developer.dealslist.model.ListingItem
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 
-const val BASE_URL = "https://api.target.com/mobile_case_study_deals/v1/"
-const val END_POINT = "deals"
+private const val BASE_URL = "https://api.target.com/mobile_case_study_deals/v1/"
+private const val END_POINT = "deals"
 
 private val retrofit = Retrofit
     .Builder()
@@ -23,4 +24,7 @@ val fetchService = retrofit.create(DealsListApiService::class.java)
 interface DealsListApiService{
     @GET(END_POINT)
     suspend fun getDealsListItems(): DealsList
+
+    @GET("${BASE_URL}${END_POINT}/{dealId}")
+    suspend fun getSingleItem(@Path("dealId") dealId: String): ListingItem
 }

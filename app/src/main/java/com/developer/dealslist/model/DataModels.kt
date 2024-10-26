@@ -41,3 +41,16 @@ sealed interface ViewState {
         val itemList: DealsList
     ): ViewState
 }
+
+sealed interface DetailViewState {
+    data object Loading: DetailViewState
+
+    data class ItemNotFound(
+        val code: String,
+        val message: String
+    ): DetailViewState
+
+    data class Success(
+        val item: ListingItem
+    ): DetailViewState
+}

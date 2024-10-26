@@ -34,7 +34,6 @@ class ListingPageViewModel(
 
                 //Retrofit
                 val fetchedProducts = fetchService.getDealsListItems()
-                println("shit" + fetchedProducts.products[1])
 
                 _listingViewState.value = ViewState.Success(fetchedProducts)
             }
