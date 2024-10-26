@@ -8,5 +8,8 @@
     <string name="in_aisle_label">in aisle </string>
     <string name="listing_page_title">List</string>
 
-    <!-- listing page -->
+    <!-- detail page -->
+    <string name="detail_page_title">Details</string>
+    <string name="product_details_label">Product Details</string>
+    <string name="add_to_cart_button_label">Add to cart</string>
 </resources>

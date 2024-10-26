@@ -36,7 +36,7 @@ fun DealsAppNavigation(
 
         composable(route = Screen.itemDetailPage.route){
             val product = navController.previousBackStackEntry?.savedStateHandle?.get<ListingItem>("product")?: ListingItem()
-            ItemDetailPageView()
+            ItemDetailPageView(item = product)
         }
     }
 }
