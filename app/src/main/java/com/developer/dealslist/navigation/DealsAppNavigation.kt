@@ -11,6 +11,9 @@ import com.developer.dealslist.view.ListingPageView
 import com.developer.dealslist.viewmodel.ItemDetailPageViewModel
 import com.developer.dealslist.viewmodel.ListingPageViewModel
 
+/**
+ * The application navigation controller that coordinates screen transitions
+ **/
 @Composable
 fun DealsAppNavigation(
 ){
@@ -23,17 +26,18 @@ fun DealsAppNavigation(
         navController = navController,
         startDestination = Screen.ItemListingPage.route,
     ){
+        //main/list screen
         composable(route = Screen.ItemListingPage.route){
             ListingPageView(
-                navController = navController,
-                listingViewState = listingPageViewModel.listingViewState.value,
                 navigateToDetailScreen = {
                     navController.currentBackStackEntry?.savedStateHandle?.set("product", it)
                     navController.navigate(Screen.itemDetailPage.route)
-                }
+                },
+                listingViewState = listingPageViewModel.listingViewState.value
             )
         }
 
+        //detail screen
         composable(route = Screen.itemDetailPage.route){
             val product = navController.previousBackStackEntry?.savedStateHandle?.get<ListingItem>("product")?: ListingItem()
             ItemDetailPageView(item = product, navController = navController, productDetailViewModel = itemDetailPageViewModel)

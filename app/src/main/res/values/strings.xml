@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">DealsList</string>
+    <string name="item_not_found_code">RED</string>
+    <string name="item_not_found_message">Error loading products</string>
 
     <!-- listing page -->
     <string name="reg_price_label">reg.</string>

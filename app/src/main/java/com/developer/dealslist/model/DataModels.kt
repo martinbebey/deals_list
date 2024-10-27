@@ -3,6 +3,9 @@ package com.developer.dealslist.model
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
+/**
+ * Composition/Attributes for various data objects used in the app
+ **/
 
 @Parcelize
 data class ListingItem(

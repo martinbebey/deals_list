@@ -1,11 +1,9 @@
 package com.developer.dealslist.view
 
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
@@ -15,15 +13,23 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import androidx.navigation.NavController
 import com.developer.dealslist.R
 import com.developer.dealslist.model.ListingItem
 import com.developer.dealslist.model.ViewState
 
+/**
+ * This controls what is displayed on the list screen.
+ * A loading indicator is shown while the data is being fetched.
+ * An error is shown to the user if the fetching operation fails.
+ * Otherwise, if all goes well, then the data is shown
+ *
+ * @param modifier the composable modifier
+ * @param listingViewState the state of the fetching operation
+ * @param navigateToDetailScreen the screen transition operation when an item is selected from the list
+ **/
 @Composable
 fun ListingPageView(
     navigateToDetailScreen: (ListingItem) -> Unit,
-    navController: NavController,
     listingViewState: ViewState,
     modifier: Modifier = Modifier
 ) {

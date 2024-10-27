@@ -5,40 +5,40 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.developer.dealslist.model.ListingItem
+import com.developer.dealslist.R
 import com.developer.dealslist.model.ViewState
 import com.developer.dealslist.services.fetchService
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-class ListingPageViewModel(
-//    private val repository: ProductRepository = ProductRepository(apiClient = KtorApiClient())
-): ViewModel() {
-    private val _productsList = MutableStateFlow<List<ListingItem>>(emptyList())
+/**
+ * This is the viewmodel for the lsit page.
+ * It fetches the list of deals using the API service
+ **/
+class ListingPageViewModel: ViewModel() {
     private val _listingViewState: MutableState<ViewState> = mutableStateOf(ViewState.Loading)
     val listingViewState: State<ViewState> = _listingViewState
-    val productList: StateFlow<List<ListingItem>> = _productsList
 
     init {
         fetchProducts()
     }
 
+    /**
+     * Fetches the list of deals using the API service in a non-blocking IO coroutine
+     */
     private fun fetchProducts() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                //Ktor
-//                val fetchedProducts = repository.getProducts()
-//                _productsList.emit(fetchedProducts)
-
                 //Retrofit
                 val fetchedProducts = fetchService.getDealsListItems()
 
                 _listingViewState.value = ViewState.Success(fetchedProducts)
             }
             catch (exception: Exception){
-                _listingViewState.value = ViewState.ItemNotFound(code = "RED", message = "Error loading products")
+                _listingViewState.value = ViewState.ItemNotFound(
+                    code = R.string.item_not_found_code.toString(),
+                    message = R.string.item_not_found_message.toString()
+                )
                 exception.printStackTrace()
             }
         }

@@ -22,9 +22,16 @@ val fetchService = retrofit.create(DealsListApiService::class.java)
  * Service for fetching the remote data list
  **/
 interface DealsListApiService{
+
+    /**
+     * Gets the full list of deals
+     */
     @GET(END_POINT)
     suspend fun getDealsListItems(): DealsList
 
+    /**
+     * Gets a single item details
+     */
     @GET("${BASE_URL}${END_POINT}/{dealId}")
     suspend fun getSingleItem(@Path("dealId") dealId: String): ListingItem
 }
