@@ -16,3 +16,11 @@ val StatusBarColour = Color(0xFFCC0000)
 //Top App Bar
 val TopAppBarColour = Color(0xFFFFFFFF)
 val TopBarTitleColour = Color(0xFF333333)
+
+//Deals List Page
+val SalePriceColour = Color(0xFFAA0000)
+val TextColourDarkGrey = Color(0xFF333333)
+val TextColourLightGrey = Color(0xFF666666)
+val ItemSeparatorColour = Color(0xFFD6D6D6)
+
+//Product Detail Page
