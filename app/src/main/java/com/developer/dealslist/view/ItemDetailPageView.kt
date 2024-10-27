@@ -41,7 +41,6 @@ fun ItemDetailPageView(
 ){
 
     val scaffoldState = rememberScaffoldState()
-    productDetailViewModel.fetchSingleProduct(item.id.toString())
     val detailViewState = productDetailViewModel.listingViewState.value
 
     Scaffold(
@@ -110,13 +109,15 @@ fun ItemDetailPageView(
             )
 
             Box{
+                productDetailViewModel.fetchSingleProduct(item.id.toString())
+
                 when (detailViewState) {
                     DetailViewState.Loading -> {
                         CircularProgressIndicator(modifier.align(Alignment.Center))
                     }
 
                     is DetailViewState.ItemNotFound -> {
-                        Text(text = detailViewState.message, color = Color.Red)
+                        CircularProgressIndicator(modifier.align(Alignment.Center))
                     }
 
                     is DetailViewState.Success -> {
