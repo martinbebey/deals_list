@@ -12,3 +12,7 @@ val Pink40 = Color(0xFF7D5260)
 
 //App
 val StatusBarColour = Color(0xFFCC0000)
+
+//Top App Bar
+val TopAppBarColour = Color(0xFFFFFFFF)
+val TopBarTitleColour = Color(0xFF333333)

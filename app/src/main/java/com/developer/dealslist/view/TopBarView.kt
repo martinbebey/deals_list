@@ -13,8 +13,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.developer.dealslist.R
+import com.developer.dealslist.ui.theme.StatusBarColour
+import com.developer.dealslist.ui.theme.TopAppBarColour
+import com.developer.dealslist.ui.theme.TopBarTitleColour
 
 @Composable
 fun TopBarView(
@@ -25,11 +29,12 @@ fun TopBarView(
         title = {
             Text(
                 text = title,
-                color = colorResource(id = R.color.white)
+                color = TopBarTitleColour,
+                fontWeight = FontWeight.ExtraBold
             )
         },
 
-        backgroundColor = colorResource(id = R.color.purple_200),
+        backgroundColor = TopAppBarColour,
         navigationIcon = { NavigationIcon(title = title, onBackNavClicked = onBackNavClicked) }
     )
 }
@@ -43,7 +48,7 @@ fun NavigationIcon(
         IconButton(onClick = { onBackNavClicked() }) {
             Icon(
                 imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                tint = Color.White,
+                tint = StatusBarColour,
                 contentDescription = null
             )
         }
