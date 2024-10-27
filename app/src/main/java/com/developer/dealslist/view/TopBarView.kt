@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.developer.dealslist.R
 
@@ -24,14 +25,10 @@ fun TopBarView(
         title = {
             Text(
                 text = title,
-                color = colorResource(id = R.color.white),
-                modifier = Modifier
-                    .padding(start = 4.dp)
-                    .heightIn(max = 24.dp)
+                color = colorResource(id = R.color.white)
             )
         },
 
-        elevation = 3.dp,
         backgroundColor = colorResource(id = R.color.purple_200),
         navigationIcon = { NavigationIcon(title = title, onBackNavClicked = onBackNavClicked) }
     )
@@ -42,7 +39,7 @@ fun NavigationIcon(
     title: String,
     onBackNavClicked: () -> Unit = {}
 ){
-    if(!title.contains("List")) {
+    if(!title.contains(stringResource(id = R.string.listing_page_title))) {
         IconButton(onClick = { onBackNavClicked() }) {
             Icon(
                 imageVector = Icons.AutoMirrored.Filled.ArrowBack,

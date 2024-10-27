@@ -46,7 +46,7 @@ fun ItemDetailPageView(
     Scaffold(
         topBar = {
             TopBarView(title = stringResource(id = R.string.detail_page_title)){
-                navController.navigateUp()
+                navController.popBackStack()
             }
         },
         scaffoldState = scaffoldState,
