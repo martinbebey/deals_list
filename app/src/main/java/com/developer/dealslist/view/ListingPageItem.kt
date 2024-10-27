@@ -22,6 +22,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
@@ -51,88 +52,76 @@ fun ListingPageItem(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(15.dp)
-//                .drawBehind {
-//
-//                    val strokeWidth = 10.0f
-//                    val y = size.height - strokeWidth / 2
-//
-//                    drawLine(
-//                        Color.LightGray,
-//                        Offset(0f, y),
-//                        Offset(size.width, y),
-//                        strokeWidth
-//                    )
-//                }
+                .padding(dimensionResource(id = R.dimen.dp_15))
         ) {
             Image(
                 painter = rememberAsyncImagePainter(item.image_url),
                 contentDescription = "product image",
                 modifier = Modifier
-                    .size(140.dp)
-                    .clip(RoundedCornerShape(8.dp))
+                    .size(dimensionResource(id = R.dimen.deals_list_image_size))
+                    .clip(RoundedCornerShape(dimensionResource(id = R.dimen.dp_8)))
             )
 
             Column(
                 modifier = Modifier
-                    .padding(start = 8.dp)
+                    .padding(start = dimensionResource(id = R.dimen.dp_8))
             ) {
                 Row {
                     Text(
                         text = item.sale_price.display_string,
                         color = SalePriceColour,
                         style = TextStyle(fontWeight = FontWeight.Bold),
-                        fontSize = 21.sp,
+                        fontSize = dimensionResource(id = R.dimen.sp_21).value.sp,
                     )
 
                     Text(
                         text = stringResource(id = R.string.reg_price_label),
                         color = TextColourDarkGrey,
-                        modifier = Modifier.padding(4.dp),
-                        fontSize = 12.sp
+                        modifier = Modifier.padding(dimensionResource(id = R.dimen.dp_4)),
+                        fontSize = dimensionResource(id = R.dimen.sp_12).value.sp
                     )
 
                     Text(
                         text = item.regular_price.display_string,
                         color = TextColourDarkGrey,
-                        modifier = Modifier.padding(top = 4.dp),
-                        fontSize = 12.sp
+                        modifier = Modifier.padding(top = dimensionResource(id = R.dimen.dp_4)),
+                        fontSize = dimensionResource(id = R.dimen.sp_12).value.sp
                     )
                 }
 
                 Text(
                     text = stringResource(id = R.string.online_label),
                     color = TextColourLightGrey,
-                    fontSize = 12.sp
+                    fontSize = dimensionResource(id = R.dimen.sp_12).value.sp
                 )
 
                 Text(
                     text = item.title,
                     color = Color.Black,
-                    modifier = Modifier.padding(top = 12.dp),
-                    fontSize = 14.sp
+                    modifier = Modifier.padding(top = dimensionResource(id = R.dimen.dp_12)),
+                    fontSize = dimensionResource(id = R.dimen.sp_14).value.sp
                 )
 
                 Row(
-                    modifier = Modifier.padding(top = 12.dp)
+                    modifier = Modifier.padding(top = dimensionResource(id = R.dimen.dp_12))
                 ) {
                     Text(
                         text = stringResource(id = R.string.in_stock_label),
                         color = Color.Green,
-                        fontSize = 12.sp
+                        fontSize = dimensionResource(id = R.dimen.sp_12).value.sp
                     )
 
                     Text(
                         text = stringResource(id = R.string.in_aisle_label),
                         color = TextColourLightGrey,
-                        modifier = Modifier.padding(horizontal = 4.dp),
-                        fontSize = 12.sp
+                        modifier = Modifier.padding(horizontal = dimensionResource(id = R.dimen.dp_4)),
+                        fontSize = dimensionResource(id = R.dimen.sp_12).value.sp
                     )
 
                     Text(
                         text = item.aisle,
                         color = TextColourLightGrey,
-                        fontSize = 12.sp
+                        fontSize = dimensionResource(id = R.dimen.sp_12).value.sp
                     )
                 }
             }
@@ -141,8 +130,8 @@ fun ListingPageItem(
         Divider(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(1.dp)
-                .padding(start = 16.dp),
+                .height(dimensionResource(id = R.dimen.dp_1))
+                .padding(start = dimensionResource(id = R.dimen.dp_16)),
             color = ItemSeparatorColour
         )
     }
