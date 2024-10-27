@@ -100,12 +100,12 @@ fun ItemDetailPageView(
                     Text(
                         text = item.title,
                         color = Color.Black,
-                        modifier = Modifier.padding(top = 30.dp),
-                        fontSize = 18.sp
+                        modifier = Modifier.padding(top = dimensionResource(id = R.dimen.detail_page_title_padding)),
+                        fontSize = dimensionResource(id = R.dimen.detail_page_title_fontSize).value.sp
                     )
 
                     Row(
-                        modifier = Modifier.padding(top = 15.dp)
+                        modifier = Modifier.padding(top = dimensionResource(id = R.dimen.dp_15))
                     ) {
                         Text(
                             text = item.sale_price.display_string,
@@ -140,8 +140,13 @@ fun ItemDetailPageView(
             item{
                 Divider(
                     modifier = Modifier
-                        .height(15.dp)
-                        .border(BorderStroke(0.dp, SolidColor(TextColourLightGrey))),
+                        .height(dimensionResource(id = R.dimen.dp_15))
+                        .border(
+                            BorderStroke(
+                                dimensionResource(id = R.dimen.detail_page_divider_border_stroke_width),
+                                SolidColor(TextColourLightGrey)
+                            )
+                        ),
                     color = ItemDetailSeparatorColour
                 )
             }
@@ -150,15 +155,15 @@ fun ItemDetailPageView(
                 LazyColumn(
                     modifier = Modifier
                         .padding(dimensionResource(id = R.dimen.dp_12))
-                        .height(185.dp)
+                        .height(dimensionResource(id = R.dimen.detail_page_description_lazy_padding))
                 ) {
                     item {
                         Text(
                             text = stringResource(id = R.string.product_details_label),
                             color = TextColourDarkGrey,
                             style = TextStyle(fontWeight = FontWeight.Bold),
-                            modifier = Modifier.padding(top = 4.dp),
-                            fontSize = 18.sp
+                            modifier = Modifier.padding(top = dimensionResource(id = R.dimen.dp_4)),
+                            fontSize = dimensionResource(id = R.dimen.detail_page_title_fontSize).value.sp
                         )
                     }
 
@@ -180,7 +185,7 @@ fun ItemDetailPageView(
                                         text = detailViewState.item.description,
                                         color = ItemDetailDescriptionTextColour,
                                         style = TextStyle(fontWeight = FontWeight.Bold),
-                                        modifier = Modifier.padding(top = 20.dp)
+                                        modifier = Modifier.padding(top = dimensionResource(id = R.dimen.detail_page_description_padding))
                                     )
                                 }
                             }
@@ -201,13 +206,13 @@ fun ItemDetailPageView(
                 Box{
                     Divider(
                         modifier = Modifier
-                            .height(15.dp),
+                            .height(dimensionResource(id = R.dimen.dp_15)),
                         color = Color.LightGray
                     )
                     Column {
 
                         Spacer(modifier = Modifier
-                            .height(1.dp)
+                            .height(dimensionResource(id = R.dimen.dp_1))
                         )
                         Box(
                             modifier = Modifier
@@ -219,15 +224,15 @@ fun ItemDetailPageView(
 
                             Button(
                                 modifier = Modifier
-                                    .padding(16.dp)
-                                    .width(328.dp),
+                                    .padding(dimensionResource(id = R.dimen.dp_16))
+                                    .width(dimensionResource(id = R.dimen.detail_page_add_to_cart_button_width)),
                                 onClick = {},
                                 shape = RoundedCornerShape(10),
                                 colors = ButtonDefaults.buttonColors(containerColor = StatusBarColour)
                             ) {
                                 Text(
                                     text = stringResource(id = R.string.add_to_cart_button_label),
-                                    fontSize = 18.sp,
+                                    fontSize = dimensionResource(id = R.dimen.detail_page_title_fontSize).value.sp,
                                     color = Color.White,
                                     style = TextStyle(fontWeight = FontWeight.Bold)
                                 )
