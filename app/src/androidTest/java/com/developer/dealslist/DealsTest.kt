@@ -1,20 +1,13 @@
 package com.developer.dealslist
 
 import androidx.compose.ui.test.SemanticsMatcher
-import androidx.compose.ui.test.assert
-import androidx.compose.ui.test.assertHeightIsAtLeast
-import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
-import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
-import androidx.compose.ui.test.performTextInput
-import androidx.compose.ui.unit.dp
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.developer.dealslist.view.MainActivity
-import com.developer.dealslist.view.TopBarView
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -52,14 +45,6 @@ class DealsTest {
         composeTestRule.onNodeWithTag(backButtonTag).performClick()
         composeTestRule.onNodeWithText(listPageTitle).assertExists()
     }
-
-//    @Test
-//    fun check_some_dimen(){
-//        composeTestRule.setContent { TopBarView(title = "test")}
-//        composeTestRule.onNode(item)
-//            .assertIsDisplayed()
-//            .assertHeightIsAtLeast(1.dp)
-//    }
 
     @Test
     fun check_if_app_launches_within_5_seconds(){
