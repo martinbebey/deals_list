@@ -7,6 +7,8 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import com.developer.dealslist.R
@@ -49,7 +51,7 @@ fun NavigationIcon(
     onBackNavClicked: () -> Unit = {}
 ){
     if(!title.contains(stringResource(id = R.string.listing_page_title))) {
-        IconButton(onClick = { onBackNavClicked() }) {
+        IconButton(onClick = { onBackNavClicked() }, modifier = Modifier.testTag(stringResource(id = R.string.back_button_tag))) {
             Icon(
                 imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                 tint = StatusBarColour,

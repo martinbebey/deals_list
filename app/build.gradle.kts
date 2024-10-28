@@ -58,6 +58,44 @@ dependencies {
     val material3_version = "material3-android:1.2.0-rc01"
     val coil_version = "coil-compose:2.4.0"
 
+    // To use the androidx.test.core APIs
+//    androidTestImplementation("androidx.test:core:1.6.1")
+//    androidTestImplementation("androidx.test:core:1.6.0")
+//    androidTestImplementation("androidx.test:core:1.5.0")
+//    // Kotlin extensions for androidx.test.core
+//    androidTestImplementation("androidx.test:core-ktx:1.6.1")
+//
+//    // To use the androidx.test.espresso
+//    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+//
+//    // To use the JUnit Extension APIs
+//    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+//    // Kotlin extensions for androidx.test.ext.junit
+//    androidTestImplementation("androidx.test.ext:junit-ktx:1.2.1")
+//
+//    // To use the Truth Extension APIs
+//    androidTestImplementation("androidx.test.ext:truth:1.6.0")
+//
+//    // To use the androidx.test.runner APIs
+//    androidTestImplementation("androidx.test:runner:1.6.2")
+//    androidTestImplementation("androidx.test:runner:1.6.1")
+
+    // To use android test orchestrator
+//    androidTestUtil("androidx.test:orchestrator:1.5.1")
+
+//    debugImplementation("androidx.compose.ui:ui-test-manifest:$compose_version")
+//    implementation("androidx.compose.ui:ui-test-junit4:$compose_version")
+//    implementation("androidx.compose.ui:ui:$compose_version")
+//    implementation("androidx.compose.ui:ui-tooling:$compose_version")
+//    testImplementation("junit:junit:4.+")
+//    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+//    androidTestImplementation("androidx.test.ext:junit:1.5.0")
+//    androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
+//    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0")
+
+    testImplementation("org.mockito:mockito-core:4.7.0")
+    testImplementation("org.mockito:mockito-android:4.7.0")
+
     implementation("androidx.navigation:navigation-compose:$nav_version")
     implementation("androidx.compose.ui:ui:$compose_version")
     implementation("androidx.compose.material:material:$compose_version")

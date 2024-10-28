@@ -14,4 +14,8 @@
     <string name="detail_page_title">Details</string>
     <string name="product_details_label">Product Details</string>
     <string name="add_to_cart_button_label">Add to cart</string>
+
+    <!-- test -->
+    <string name="back_button_tag">back</string>
+    <string name="random_deal_price">$229.99</string>
 </resources>
