@@ -1,5 +1,6 @@
 package com.developer.dealslist.services
 
+import com.developer.dealslist.BuildConfig
 import com.developer.dealslist.model.DealsList
 import com.developer.dealslist.model.ListingItem
 import retrofit2.Retrofit
@@ -7,8 +8,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-private const val BASE_URL = "https://api.target.com/mobile_case_study_deals/v1/"
-private const val END_POINT = "deals"
+private const val BASE_URL = BuildConfig.BASE_URL
+private const val END_POINT = BuildConfig.END_POINT
 
 private val retrofit = Retrofit
     .Builder()
