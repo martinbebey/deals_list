@@ -26,7 +26,7 @@ class DealsTest {
     var detailsPageTitle: String = ""
     var onlineLabel: String = ""
     var backButtonTag: String = ""
-    var apiErrorMessage: String = ""
+    var apiErrorMessage: String = "someString"
 
     @Before
     fun init(){
