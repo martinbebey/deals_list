@@ -1,6 +1,7 @@
 image: gradle:7.4-jdk11
 
 stages:
+  - lint
   - build
   - test
 
@@ -21,17 +22,27 @@ before_script:
   - rm -rf $ANDROID_SDK_ROOT/platform-tools  # Clean up existing installation
   - yes | $ANDROID_SDK_ROOT/cmdline-tools/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT --install "platform-tools" "platforms;android-30" "build-tools;30.0.3" || true
   - export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools
+  - cd ..
+  - echo "Current directory:"
+  - pwd
+  - echo "Listing contents:"
+  - ls -la
+  - chmod +x gradlew  # Ensure gradlew is executable
 
 build:
   stage: build
   script:
-    - cd ..
-    - pwd
-    - ls -la
-    - chmod +x gradlew
+    - echo "Running build..."
     - ./gradlew assembleDebug
 
 test:
   stage: test
   script:
+    - echo "Running test..."
     - ./gradlew test
+
+lint:
+  stage: lint
+  script:
+    - echo "Running linting..."
+    - ./gradlew lint  # Example for Android projects
