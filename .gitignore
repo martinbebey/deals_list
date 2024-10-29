@@ -18,6 +18,5 @@ local.properties
 /.idea
 gradle.properties
 gradle/
-gradlew
 gradlew.bat
 settings.gradle.kts
