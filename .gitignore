@@ -17,4 +17,3 @@ local.properties
 #build files
 /.idea
 gradle.properties
-settings.gradle.kts
